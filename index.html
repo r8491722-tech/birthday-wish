@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Love ❤</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      padding: 30px 10px;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box {
+      width: 100%;
+      max-width: 400px;
+      background: rgba(0,0,0,0.3);
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0px 4px 20px rgba(0,0,0,0.4);
+    }
+    h1, h2 {
+      margin-bottom: 25px;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+    }
+    button {
+      background: #ff3366;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 100%;
+      max-width: 250px;
+    }
+    button:hover {
+      background: #ff1a4d;
+    }
+    #finalLink {
+      display: none;
+      margin-top: 20px;
+      word-wrap: break-word;
+    }
+    a {
+      color: yellow;
+      font-weight: bold;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    @media (max-width: 450px) {
+      h1, h2 {
+        font-size: 1rem;
+        line-height: 1.4rem;
+      }
+      button {
+        font-size: 16px;
+        padding: 12px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1 id="message">
+      Happy Birthday My Love ❤<br>
+      Tum meri zindagi ka sabse khoobsurat tohfa ho 🎂✨
+    </h1>
+    <button id="nextBtn">Next ❤</button>
+    <h2 id="waitMsg" style="display:none;"></h2>
+    <div id="finalLink">
+      🎉 <a href="https://docs.google.com/presentation/d/your-presentation-id" target="_blank">
+        Click here for your surprise presentation 🎁
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const nextBtn = document.getElementById("nextBtn");
+    const waitMsg = document.getElementById("waitMsg");
+    const finalLink = document.getElementById("finalLink");
+    const message = document.getElementById("message");
+
+    nextBtn.addEventListener("click", () => {
+      // Step 2: Show "close your eyes" message
+      message.style.display = "none";
+      nextBtn.style.display = "none";
+      waitMsg.style.display = "block";
+      waitMsg.innerHTML = "Close your eyes and demand a wish 🎂✨";
+
+      // Step 3: After 30 seconds, show the link
+      setTimeout(() => {
+        waitMsg.style.display = "none";
+        finalLink.style.display = "block";
+      }, 30000); // 30 seconds
+    });
+  </script>
+</body>
+</html>
